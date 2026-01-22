@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+
 import { FilesService, FileItem } from '../../services/files.service';
 
 @Component({
   selector: 'app-files',
+  standalone: true,
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './files.component.html',
   styleUrls: ['./files.component.scss'],
 })
