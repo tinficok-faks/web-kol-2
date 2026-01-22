@@ -1,0 +1,14 @@
+@import "../variables.scss";
+
+.navbar {
+    display: flex;
+    .navbar-brand {
+        font-size: 24px;
+    }
+}
+
+.card {
+    .card-text {
+        font-size: 64px;
+    }    
+}
