@@ -1,20 +1,9 @@
-<div class="card border-0 shadow-sm">
-    <div class="card-body p-4">
-        <h4 class="mb-3">Upload nove datoteke</h4>
-
-        <form (ngSubmit)="onSubmit()" novalidate>
-            <div class="mb-3">
-                <label class="form-label">Datoteka</label>
-                <input class="form-control" type="file" (change)="onFileSelected($event)" required />
-                <div class="form-text" *ngIf="selectedFile">
-                    Odabrano: <strong>{{ selectedFile.name }}</strong>
-                </div>
-            </div>
-
-            <button class="btn btn-primary" type="submit" [disabled]="!selectedFile || isUploading">
-                <i class="bi bi-cloud-arrow-up me-2"></i>
-                {{ isUploading ? 'Upload...' : 'Upload' }}
-            </button>
-        </form>
+<div class="mb-4">
+    <label class="form-label fw-medium">Choose a file</label>
+    <div class="d-flex gap-2 align-items-center">
+        <input class="form-control" type="file" (change)="onFileSelected($event)" id="fileInput" />
+        <button class="btn btn-primary" type="button" (click)="uploadFile()" [disabled]="!selectedFile || isUploading">
+            {{ isUploading ? 'Uploading...' : 'Upload' }}
+        </button>
     </div>
 </div>

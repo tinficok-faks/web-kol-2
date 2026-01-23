@@ -35,6 +35,42 @@ export class FilesComponent implements OnInit {
     });
   }
 
+  getFileIcon(filename: string): string {
+    const ext = filename.split(".").pop()?.toLowerCase() || "";
+    switch (ext) {
+      case "mp3":
+      case "wav":
+      case "flac":
+        return "🎵";
+      case "png":
+      case "jpg":
+      case "jpeg":
+      case "gif":
+      case "svg":
+        return "📷";
+      case "docx":
+      case "doc":
+        return "📘";
+      case "pdf":
+        return "📕";
+      case "xlsx":
+      case "xls":
+      case "csv":
+        return "📊";
+      case "mp4":
+      case "avi":
+      case "mov":
+      case "mkv":
+        return "🎥";
+      default:
+        return "📄";
+    }
+  }
+
+  formatFileSize(bytes: number): string {
+    return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+  }
+
   download(item: FileItem): void {
     this.filesService.download(item._id).subscribe({
       next: (blob) => {

@@ -1,4 +1,9 @@
 .app-navbar {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    border-bottom: 2px solid rgba(93, 84, 213, 0.35);
+    box-shadow: 0 20px 80px rgba(93, 84, 213, 0.25);
+    border-bottom: 1px solid rgba(93, 84, 213, 0.2);
+}
+
+.nav-link.active {
+    border-bottom: 3px solid #5d54d5;
+    padding-bottom: 5px;
 }

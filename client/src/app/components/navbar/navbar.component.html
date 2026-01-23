@@ -1,33 +1,23 @@
 <nav class="navbar navbar-expand-lg bg-white app-navbar">
-    <div class="container-fluid px-4">
-        <a class="navbar-brand fw-semibold" routerLink="/files">
-            <i class="bi bi-folder2-open me-2 text-primary"></i>
-            File Manager
-        </a>
+    <div class="container-fluid px-4 d-flex align-items-center justify-content-center">
+        <div class="d-flex align-items-center gap-4">
+            <a class="navbar-brand fw-semibold mb-0" routerLink="/files">
+                <span class="me-2 text-primary" style="font-size: 1.5rem;">💾</span>
+                <strong>mycloud</strong>
+            </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/files" routerLinkActive="active"
-                        [routerLinkActiveOptions]="{ exact: true }">
-                        Datoteke
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/new-file" routerLinkActive="active">
-                        Nova datoteka
-                    </a>
-                </li>
-            </ul>
-
-            <div class="d-flex align-items-center gap-2">
-                <i class="bi bi-person-circle text-primary"></i>
-                <span class="fw-medium">{{ username || "Gost" }}</span>
+            <div class="d-flex gap-3">
+                <a class="nav-link text-dark" routerLink="/files" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }">
+                    Files
+                </a>
+                <a class="nav-link text-dark" routerLink="/new-file" routerLinkActive="active">
+                    New file
+                </a>
             </div>
         </div>
+
+        <span class="fw-medium text-primary" style="margin-left: auto; margin-right: 40px;">Hello {{ username ||"tin"
+            }}!</span>
     </div>
 </nav>

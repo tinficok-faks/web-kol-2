@@ -39,7 +39,7 @@ const upload = multer({ storage });
 const JWT_SECRET = 'super_secret_key_change_me';
 
 app.post('/api/login', (req, res) => {
-    const name = 'Tin'; // TODO: stavi svoje ime
+    const name = 'Tin';
     const token = jwt.sign({ name }, JWT_SECRET, { expiresIn: '5m' }); // 5 min
     res.json({ token });
 });

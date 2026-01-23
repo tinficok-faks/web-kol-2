@@ -23,7 +23,7 @@ export class NewFileComponent {
     this.selectedFile = input.files && input.files.length ? input.files[0] : null;
   }
 
-  onSubmit(): void {
+  uploadFile(): void {
     if (!this.selectedFile) return;
 
     this.isUploading = true;
